@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <title>Acerca de Laurie</title>
-        <meta charset="UTF-8">
-        <link href="css/estilo-pag2.css" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="img/logo-icon.ico">
-    </head>
+<head>
+    <title>Laurie Anderson - Bienvenido/a</title>
+    <meta charset="UTF-8">
+    <link href="css/estilo-pag2.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/logo-icon.ico">
+</head>
+
+<body>
 
     <body>
         <header>
-            <a href="index.html" class="logo-link"><img src="img/logo-header.png" alt="Logo de parche de Laurie Anderson" height="200" width="200" class="logo-header"></a>
-            <p id="nombre-header">Laurie Anderson</p>
+            <div id="logo-nombre">
+                <a href="index.html" class="logo-link"><img src="img/logo-header.png"
+                        alt="Logo de parche de Laurie Anderson" height="90" width="90" class="logo-header"></a>
+                <p id="nombre-header">Laurie Anderson</p>
+            </div>
             <nav>
                 <ul>
                     <div class="vinculos-header">
@@ -30,6 +35,37 @@
         </header>
 
         <main>
+            <section>
+                <img src="img/anderson.jpg" alt="Fotografía de Laurie Anderson" height="230">
+                <p>“El lenguaje es un virus que viene del espacio exterior.” — Laurie Anderson</p>
+                <h1>Una voz singular en el arte contemporáneo</h1>
+                <p>Laurie Anderson es una artista multidisciplinaria cuya obra abarca performance, música, cine y arte
+                    multimedia. Su práctica se caracteriza por la exploración del lenguaje, la tecnología y la narración
+                    como herramientas para construir experiencias artísticas complejas. A lo largo de su carrera, ha
+                    desarrollado un estilo propio que combina lo experimental con lo accesible.
+                    Su trabajo se distingue por el uso de la voz como elemento central. A través de relatos, textos y
+                    composiciones sonoras, crea piezas que invitan a reflexionar sobre la comunicación, la memoria y la
+                    percepción. La tecnología aparece como un medio para expandir estas posibilidades expresivas.
+                    Además, su enfoque integra elementos visuales, musicales y performáticos, generando obras que no se
+                    limitan a un único formato. Esta hibridez la posiciona como una figura clave dentro del arte
+                    contemporáneo.</p>
+            </section>
+            <section>
+                <h2>¿Sabías esto de Laurie?</h2>
+                <p>Oprime el botón de abajo para descubrir datos curiosos sobre la artista.</p>
+                <button id="boton-curiosidades" onclick="mostrarCuriosidades()">Mostrar curiosidades</button>
+                <h3>Trayectoria y proyección internacional</h3>
+                <p>Nacida en Estados Unidos, Laurie Anderson comenzó su carrera en el circuito del arte experimental y
+                    la performance en la década de 1970. Su reconocimiento se amplió cuando logró llevar propuestas
+                    conceptuales a públicos más amplios, manteniendo una fuerte identidad artística.
+                    Uno de sus trabajos más conocidos es O Superman, una pieza que combina música electrónica y
+                    narrativa, y que alcanzó difusión internacional. Este tipo de obras evidencian su capacidad para
+                    integrar lo experimental con formatos más populares.
+                    A lo largo de su trayectoria, ha presentado sus obras en museos, teatros y festivales de todo el
+                    mundo. Su producción ha influido en múltiples disciplinas y continúa siendo una referencia en el
+                    cruce entre arte, tecnología y narración.</p>
+                <img src="img/laurie-lou-reed.jpg" alt="Imagen de Laurie y su exesposo Lou Reed" height="230">
+            </section>
         </main>
 
         <footer>
@@ -39,4 +75,7 @@
                 errores.<br>Las imágenes fueron recopiladas de Internet únicamente para su uso en este parcial.</p>
         </footer>
     </body>
+    <!--Me encontré con algunos errores de ejecución y al comprobar con la IA decidí utilizar la herramienta de poner el script luego del body-->
+    <script src=js/gestion-pag2.js></script>
+
 </html>

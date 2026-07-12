@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: rgba(71, 181, 255) url(../img/fondo.png);
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    height: 85%;
+    width: 100%;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(223, 246, 255);
+    height: 15%;
+    width: 100%;
+}
+
+#logo-nombre {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
+#nombre-header {
+    font-family: "Abel", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color: rgb(17, 43, 80);
+    width: 30%;
+    margin-left: 1rem;
+}
+
+.logo-header:hover {
+    height: 6rem;
+    width: auto;
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.vinculos-header {
+    font-family: "Abel", sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 3rem;
+    gap: 1rem;
+}
+
+.vinculos-header a {
+    color: rgb(17, 43, 80);
+    list-style: none;
+    text-decoration: none;
+}
+
+.redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+}
+
+.twitter,
+.facebook,
+.instagram {
+    height: 1rem;
+    width: 1rem;
+}
+
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgba(223, 246, 255);
+    height: 18%;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+footer p {
+    font-family: "Abel", sans-serif;
+    margin: 0.4rem 0;
+    color: #1e293b;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer a {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Main */
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(223, 246, 255, 90%);
+    padding: 1.5rem;
+    margin-top: 4rem;
+    border-radius: 0.2rem;
+    width: 20%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Abel", sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: rgb(17, 43, 80);
+    margin-top: 1rem;
+}
+
+section p {
+    font-family: "Abel", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgb(17, 43, 80);
+    width: 80%;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.tarjetas:hover {
+    transform: scale(0.9);
+    /* Esto es código no visto, pero es una simple transición que estudié para que quede un poco mejor el efecto que quería lograr. */
+    transition: all 0.3s ease-in-out;
+}

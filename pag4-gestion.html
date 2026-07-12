@@ -1,42 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <title>Gestión de obras</title>
-        <meta charset="UTF-8">
-        <link href="css/estilo-pag4.css" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="img/logo-icon.ico">
-    </head>
+<head>
+    <title>Laurie Anderson - Bienvenido/a</title>
+    <meta charset="UTF-8">
+    <link href="css/estilo-pag4.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="img/logo-icon.ico">
+    <script src="js/gestion-pag4.js"></script>
+</head>
 
-    <body>
-        <header>
-            <a href="index.html" class="logo-link"><img src="img/logo-header.png" alt="Logo de parche de Laurie Anderson" height="200" width="200" class="logo-header"></a>
+<body>
+    <header>
+        <div id="logo-nombre">
+            <a href="index.html" class="logo-link"><img src="img/logo-header.png"
+                    alt="Logo de parche de Laurie Anderson" height="90" width="90" class="logo-header"></a>
             <p id="nombre-header">Laurie Anderson</p>
-            <nav>
-                <ul>
-                    <div class="vinculos-header">
-                        <li><a href="pag2-acercade.html">Acerca de</a></li>
-                        <li><a href="pag3-galeria.html">Galería</a></li>
-                        <li><a href="pag4-gestion.html">Gestión</a></li>
-                    </div>
-                    <li class="redes"><a href="http://www.twitter.com/onlyanexpert" target="_blank"><img
-                                src="img/twitter.png" alt="Logo de Twitter" class="twitter"></a></li>
-                    <li class="redes"><a href="https://www.facebook.com/LaurieAnderson" target="_blank"><img
-                                src="img/facebook.png" alt="Logo de Facebook" class="facebook"></a></li>
-                    <li class="redes"><a href="http://instagram.com/laurieandersonofficial" target="_blank"><img
-                                src="img/instagram.png" alt="Logo de Instagram" class="instagram"></a></li>
-                </ul>
-            </nav>
-        </header>
+        </div>
+        <nav>
+            <ul>
+                <div class="vinculos-header">
+                    <li><a href="pag2-acercade.html">Acerca de</a></li>
+                    <li><a href="pag3-galeria.html">Galería</a></li>
+                    <li><a href="pag4-gestion.html">Gestión</a></li>
+                </div>
+                <li class="redes"><a href="http://www.twitter.com/onlyanexpert" target="_blank"><img
+                            src="img/twitter.png" alt="Logo de Twitter" class="twitter"></a></li>
+                <li class="redes"><a href="https://www.facebook.com/LaurieAnderson" target="_blank"><img
+                            src="img/facebook.png" alt="Logo de Facebook" class="facebook"></a></li>
+                <li class="redes"><a href="http://instagram.com/laurieandersonofficial" target="_blank"><img
+                            src="img/instagram.png" alt="Logo de Instagram" class="instagram"></a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <main>
-        </main>
+    <main>
+        <h1>Bienvenido/a al sistema de gestión del repositorio de grabaciones digitales de obras musicales de Laurie
+            Anderson</h1>
+        <p>A continuación, se le solicitará ingresar la cantidad de obras almacenadas en el repositorio, el tiempo
+            estimado de transferencia en milisegundos por cada MB y el costo mensual de almacenamiento.</p>
 
-        <footer>
-            <p>© 2024 Laurie Anderson. Todos los derechos reservados.</p>
-            <p>Para contactarse escribir a <a href="mailto:laurie@artedigital.com">laurie@artedigital.com</a></p>
-            <p><b>Nota:</b> Los textos fueron generados por ChatGPT y adaptados a la consigna. Pueden contener
-                errores.<br>Las imágenes fueron recopiladas de Internet únicamente para su uso en este parcial.</p>
-        </footer>
-    </body>
+        <form id="formulario-gestion">
+            <fieldset id="info-inicial">
+                <legend>Información inicial</legend>
+                <label for="cantidad-obras">Cantidad de obras almacenadas:</label>
+                <input type="number" id="cantidad-obras" name="cantidad-obras" required><br><br>
+
+                <label for="tiempo-transferencia">Tiempo estimado de transferencia (ms por MB):</label>
+                <input type="number" id="tiempo-transferencia" name="tiempo-transferencia" required><br><br>
+
+                <label for="costo-almacenamiento">Costo mensual de almacenamiento por MB:</label>
+                <input type="number" id="costo-almacenamiento" name="costo-almacenamiento" required><br><br>
+
+                <button type="button" id="boton-cargar-info" onclick="cargarInfo()">Confirmar Configuración</button>
+            </fieldset>
+
+            <p>Ahora se solicitará que ingrese el nombre de la obra, su duración en minutos y el peso en MB del archivo.
+            </p>
+
+            <fieldset id="info-obra" disabled>
+                <legend>Información de la obra</legend>
+                <label for="nombre-obra">Nombre de la obra:</label>
+                <input type="text" id="nombre-obra" name="nombre-obra" required><br><br>
+
+                <label for="duracion-obra">Duración de la obra (minutos):</label>
+                <input type="number" id="duracion-obra" name="duracion-obra" required><br><br>
+
+                <label for="peso-obra">Peso del archivo (MB):</label>
+                <input type="number" id="peso-obra" name="peso-obra" required><br><br>
+
+                <button type="button" id="boton-cargar-obra" onclick="cargarObra()">Cargar Obra</button>
+            </fieldset>
+
+            <p>A partir de estos datos podemos saber la duración total y el promedio de duración de todas las obras, la
+                obra de mayor duración y el tiempo de transferencia estimado para descargarla y finalmente el
+                presupuesto necesario para mantener la gestión durante un año.</p>
+
+            <button type="button" id="boton-calcular" onclick="calcularResultados()" disabled>
+                Calcular Resultados Finales
+            </button>
+
+            <fieldset id="resultados">
+                <legend>Resultados</legend>
+                <p id="duracion-total"></p>
+                <p id="promedio-duracion"></p>
+                <p id="obra-mayor-duracion"></p>
+                <p id="tiempo-transferencia-estimado"></p>
+                <p id="presupuesto-anual"></p>
+
+                <button type="button" id="boton-reiniciar" onclick="reiniciarSistema()">
+                    Reiniciar Módulo
+                </button>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2024 Laurie Anderson. Todos los derechos reservados.</p>
+        <p>Para contactarse escribir a <a href="mailto:laurie@artedigital.com">laurie@artedigital.com</a></p>
+        <p><b>Nota:</b> Los textos fueron generados por ChatGPT y adaptados a la consigna. Pueden contener
+            errores.<br>Las imágenes fueron recopiladas de Internet únicamente para su uso en este parcial.</p>
+    </footer>
+</body>
+
 </html>
